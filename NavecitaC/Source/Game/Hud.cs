@@ -20,7 +20,7 @@ namespace TcGame
         }
         public override void Draw(RenderTarget target, RenderStates states)
         {
-            text1.DisplayedString = "Points Achieved: " + meteorHits;
+            text1.DisplayedString = "Points achieved: " + meteorHits;
             base.Draw(target, states);
             target.Draw(text1);
 
