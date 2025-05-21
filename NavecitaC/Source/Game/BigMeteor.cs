@@ -12,8 +12,11 @@ namespace TcGame
         public BigMeteor()
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite1.png"));
 =======
+=======
+>>>>>>> Stashed changes
             
             Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite2.png"));
 >>>>>>> Stashed changes
