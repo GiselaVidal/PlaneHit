@@ -24,33 +24,8 @@ namespace TcGame
         {
             base.Update(dt);
 
-            if (Keyboard.IsKeyPressed(Keyboard.Key.W))
-            {
-
-                Forward = new Vector2f(0, -1);
-                Position += Forward * Speed * dt;
-
-            }
-            else if (Keyboard.IsKeyPressed(Keyboard.Key.A))
-            {
-
-                Forward = new Vector2f(-1, 0);
-                Position += Forward * Speed * dt;
-
-            }
-            else if (Keyboard.IsKeyPressed(Keyboard.Key.S))
-            {
-
-                Forward = new Vector2f(0, 1);
-                Position += Forward * Speed * dt;
-
-            }
-            else if (Keyboard.IsKeyPressed(Keyboard.Key.D))
-            {
-
-                Forward = new Vector2f(1, 0);
-                Position += Forward * Speed * dt;
-            }
+            Follow();
+            Position += Forward * Speed * dt;
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.Space))
             {
@@ -72,6 +47,12 @@ namespace TcGame
             b.Forward = new Vector2f(0, -1);
 
         }
-
+        private void Follow()
+        {
+            Forward = (Engine.Get.MousePos - Position).Normal();
+            Rotation = (float)Math.Atan2(Forward.Y, Forward.X) *
+            MathUtil.RAD2DEG + 90;
+            
+        }
     }
 }

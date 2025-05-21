@@ -15,11 +15,6 @@ namespace TcGame
             return (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
         }
 
-        public static float SizeSquared(this Vector2f vector)
-        {
-            return (vector.X * vector.X + vector.Y * vector.Y);
-        }
-
         public static Vector2f Normal(this Vector2f vector)
         {
             Vector2f result = vector;
