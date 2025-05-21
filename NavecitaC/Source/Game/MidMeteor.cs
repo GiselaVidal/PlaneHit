@@ -9,7 +9,7 @@ using TcGame;
 
 namespace NavecitaC.Source.Game
 {
-    class MidMeteor : BigMeteor
+    class MidMeteor : StaticActor
     {
         public MidMeteor() 
         {
@@ -51,6 +51,6 @@ namespace NavecitaC.Source.Game
                 }
             }
         }
-
+        
     }
 }

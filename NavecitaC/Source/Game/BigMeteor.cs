@@ -7,7 +7,7 @@ using TcGame;
 
 namespace TcGame
 {
-    internal class BigMeteor : Meteor
+    internal class BigMeteor : StaticActor
     {
         public BigMeteor()
         {
