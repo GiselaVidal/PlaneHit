@@ -35,6 +35,7 @@ namespace TcGame
         public void Init()
         {
             background = Engine.Get.Scene.Create<Background>();
+            Engine.Get.Scene.Create<Hud>();
             Engine.Get.Scene.Create<Spaceship>();
             CreateTIEpawner();
             createBigMeteors();
@@ -46,8 +47,8 @@ namespace TcGame
             ActorSpawner<EvilSpaceship> spawner;
             spawner = Engine.Get.Scene.Create<ActorSpawner<EvilSpaceship>>();
             var win = Engine.Get.Window.Size;
-            spawner.MinPosition = new Vector2f(100, 50);                      
-            spawner.MaxPosition = new Vector2f(win.X - 100, win.Y - 300);
+            spawner.MinPosition = new Vector2f(100, 0);                      
+            spawner.MaxPosition = new Vector2f(win.X - 100, win.Y - 600);
             spawner.MinTime = 1.0f;
             spawner.MaxTime = 10.0f;
             spawner.Reset();

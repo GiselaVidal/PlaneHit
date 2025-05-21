@@ -33,6 +33,9 @@
     <None Update="Data\Textures\enemy\TIE-Sized.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Textures\enemy\tie_fighter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Textures\laser\laser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

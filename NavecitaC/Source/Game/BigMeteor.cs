@@ -45,7 +45,7 @@ namespace TcGame
             if (Position.X < 0 + wSprite || Position.X > 1024 - wSprite)
             {
                 Forward = new Vector2f(Forward.X * -1, Forward.Y);
-                if (timer < 2)
+                if (timer > 2)
                 {
                     Scale *= 1.1f;
                 }
@@ -54,12 +54,12 @@ namespace TcGame
             if (Position.Y < 0+wSprite || Position.Y > 768-wSprite)
             {
                 Forward = new Vector2f(Forward.X, Forward.Y * -1);
-                if (timer < 2)
+                if (timer > 2)
                 {
                     Scale *= 1.1f;
                 }
             }
-            if (timer < 2)
+            if (timer > 2)
             {
                 CheckCollision();
             }

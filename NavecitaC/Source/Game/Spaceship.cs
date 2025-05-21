@@ -67,6 +67,8 @@ namespace TcGame
                         meteor.Destroy();
                         laser.Destroy();
                         Hud h = Engine.Get.Scene.GetFirst<Hud>();
+                        for(int  i = 1; i < 3; i++) { h.ShotDown(); }
+                            
                         
                     }
                 }
@@ -81,6 +83,7 @@ namespace TcGame
                         shipevil.Destroy();
                         laser.Destroy();
                         Hud h = Engine.Get.Scene.GetFirst<Hud>();
+                        h.ShotDown();
                     }
                 }
             }

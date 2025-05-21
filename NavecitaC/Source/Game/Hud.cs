@@ -13,14 +13,14 @@ namespace TcGame
             Layer = ELayer.Hud;
             Font font = new Font("Data/Fonts/georgia.ttf");
 
-            text1 = new Text("Points achieved", font, 20);
+            text1 = new Text("Points: ", font, 20);
             text1.Position = new SFML.System.Vector2f(0, 0);
             text1.FillColor = Color.Yellow;
           
         }
         public override void Draw(RenderTarget target, RenderStates states)
         {
-            text1.DisplayedString = "Points achieved: " + meteorHits;
+            text1.DisplayedString = "Points: " + meteorHits;
             base.Draw(target, states);
             target.Draw(text1);
 
