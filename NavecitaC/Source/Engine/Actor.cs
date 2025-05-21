@@ -11,7 +11,8 @@ namespace TcGame
     {
         public Action<Actor> OnDestroy;
         public Vector2f Forward;
-        protected float Speed;
+        public float Speed { get; set; }
+
         public enum ELayer
         {
             Background,

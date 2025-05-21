@@ -47,6 +47,7 @@ namespace TcGame
             float laserOffset = 40f;
             
             Laser b = Engine.Get.Scene.Create<Laser>();
+           
             b.Position = Position+Forward * laserOffset;
             b.Forward = Forward.Normal();
             

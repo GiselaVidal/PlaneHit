@@ -44,8 +44,9 @@ namespace TcGame
         {
             ActorSpawner<EvilSpaceship> spawner;
             spawner = Engine.Get.Scene.Create<ActorSpawner<EvilSpaceship>>();
-            spawner.MinPosition = new Vector2f(10.0f, 0.0f);
-            spawner.MaxPosition = new Vector2f(1000.0f, 0.0f);
+            var win = Engine.Get.Window.Size;
+            spawner.MinPosition = new Vector2f(100, 50);                      
+            spawner.MaxPosition = new Vector2f(win.X - 100, win.Y - 300);
             spawner.MinTime = 8.0f;
             spawner.MinTime = 10.0f;
             spawner.Reset();

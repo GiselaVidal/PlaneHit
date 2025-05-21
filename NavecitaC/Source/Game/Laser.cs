@@ -12,6 +12,7 @@ namespace TcGame
         {
             Layer = ELayer.Front;
             Sprite = new Sprite(new Texture("Data/Textures/laser/round_laser.png"));
+            Speed = 0;
         }
 
         public override void Update(float dt)
