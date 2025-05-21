@@ -9,7 +9,7 @@ using TcGame;
 
 namespace NavecitaC.Source.Game
 {
-    internal class SmallMeteor : MidMeteor
+    internal class SmallMeteor : StaticActor
     {
         public SmallMeteor() 
         {
@@ -51,5 +51,6 @@ namespace NavecitaC.Source.Game
                 }
             }
         }
+        
     }
 }
