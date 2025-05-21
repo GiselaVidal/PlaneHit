@@ -37,13 +37,14 @@ namespace TcGame
             background = Engine.Get.Scene.Create<Background>();
             Engine.Get.Scene.Create<Spaceship>();
             Engine.Get.Scene.Create<EvilSpaceship>();
-            Engine.Get.Scene.Create<Hud>();
+            CreateTIEpawner();
         }
+
         private void CreateTIEpawner()
         {
-            ActorSpawner<> spawner;
-            spawner = Engine.Get.Scene.Create<ActorSpawner<>();
-            spawner.MinPosition = new Vector2f(0.0f, -200.0f);
+            ActorSpawner<EvilSpaceship> spawner;
+            spawner = Engine.Get.Scene.Create<ActorSpawner<EvilSpaceship>>();
+            spawner.MinPosition = new Vector2f(10.0f, 0.0f);
             spawner.MaxPosition = new Vector2f(1000.0f, 0.0f);
             spawner.MinTime = 8.0f;
             spawner.MinTime = 10.0f;
