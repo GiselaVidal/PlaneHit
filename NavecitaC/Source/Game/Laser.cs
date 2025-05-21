@@ -17,6 +17,9 @@ namespace TcGame
         public override void Update(float dt)
         {
             base.Update(dt);
+
+            
+
             if (Keyboard.IsKeyPressed(Keyboard.Key.Space))
             {
                 Speed = 300f;

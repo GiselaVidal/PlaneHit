@@ -17,7 +17,8 @@ namespace TcGame
             Layer = ELayer.Front;
             Sprite = new Sprite(new Texture("Data/Textures/Player/spaceship.png"));
             Position = new SFML.System.Vector2f(Engine.Get.Window.Size.X / 2, Engine.Get.Window.Size.Y / 2 + 100); 
-            Center();                                                                                                 
+            Center();
+            
         }
 
         public override void Update(float dt)
@@ -43,8 +44,10 @@ namespace TcGame
         public void Shoot()
         {
             Laser b = Engine.Get.Scene.Create<Laser>();
-            b.Position = new Vector2f(Position.X - 40, Position.Y - 130);
-            b.Forward = new Vector2f(0, -1);
+            b.Position = Position;
+            b.Forward = Forward;
+            Rotation = (float)Math.Atan2(Forward.Y, Forward.X) *
+            MathUtil.RAD2DEG + 90;
 
         }
         private void Follow()
