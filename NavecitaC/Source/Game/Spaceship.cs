@@ -43,11 +43,12 @@ namespace TcGame
 
         public void Shoot()
         {
+            float laserOffset = 40f;
+            
             Laser b = Engine.Get.Scene.Create<Laser>();
-            b.Position = Position;
-            b.Forward = Forward;
-            Rotation = (float)Math.Atan2(Forward.Y, Forward.X) *
-            MathUtil.RAD2DEG + 90;
+            b.Position = Position+Forward * laserOffset;
+            b.Forward = Forward.Normal();
+            
 
         }
         private void Follow()

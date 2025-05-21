@@ -11,7 +11,7 @@ namespace TcGame
         public Laser()
         {
             Layer = ELayer.Front;
-            Sprite = new Sprite(new Texture("Data/Textures/laser/laser.png"));
+            Sprite = new Sprite(new Texture("Data/Textures/laser/round_laser.png"));
         }
 
         public override void Update(float dt)
@@ -22,7 +22,7 @@ namespace TcGame
 
             if (Keyboard.IsKeyPressed(Keyboard.Key.Space))
             {
-                Speed = 300f;
+                Speed = 600f;
             }
 
             Timer += dt;

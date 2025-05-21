@@ -1,4 +1,5 @@
-﻿using SFML.Graphics;
+﻿using App.Source.Game;
+using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 using System;
@@ -36,6 +37,7 @@ namespace TcGame
             background = Engine.Get.Scene.Create<Background>();
             Engine.Get.Scene.Create<Spaceship>();
             Engine.Get.Scene.Create<Hud>();
+            Engine.Get.Scene.Create<Meteor>();
         }
        
        
