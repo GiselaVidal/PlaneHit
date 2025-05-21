@@ -11,7 +11,7 @@ namespace TcGame
     {
         public BigMeteor()
         {
-            Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite2.png"));
+            Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite1.png"));
             Sprite.Color = Color.Red;
             Random r = new Random();
      

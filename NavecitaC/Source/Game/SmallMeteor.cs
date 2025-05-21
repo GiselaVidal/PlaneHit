@@ -13,7 +13,7 @@ namespace NavecitaC.Source.Game
     {
         public SmallMeteor() 
         {
-            Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite3.png"));
+            Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite2.png"));
             Sprite.Color = Color.Red;
             Random r = new Random();
             Position = Position;
