@@ -11,15 +11,7 @@ namespace TcGame
     {
         public BigMeteor()
         {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite1.png"));
-=======
-=======
->>>>>>> Stashed changes
-            
-            Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite2.png"));
->>>>>>> Stashed changes
             Sprite.Color = Color.Red;
             Random r = new Random();
      
@@ -53,12 +45,19 @@ namespace TcGame
             if (Position.X < 0 + wSprite || Position.X > 1024 - wSprite)
             {
                 Forward = new Vector2f(Forward.X * -1, Forward.Y);
-                Scale *= 1.1f;
+                if (timer < 2)
+                {
+                    Scale *= 1.1f;
+                }
+                
             }
             if (Position.Y < 0+wSprite || Position.Y > 768-wSprite)
             {
                 Forward = new Vector2f(Forward.X, Forward.Y * -1);
-                Scale *= 1.1f;
+                if (timer < 2)
+                {
+                    Scale *= 1.1f;
+                }
             }
             if (timer < 2)
             {
