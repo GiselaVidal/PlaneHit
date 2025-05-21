@@ -33,6 +33,9 @@
     <None Update="Data\Textures\meteorite.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Textures\Player\falcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Textures\Player\spaceship.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
