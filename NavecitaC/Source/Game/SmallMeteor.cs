@@ -14,16 +14,18 @@ namespace NavecitaC.Source.Game
         public SmallMeteor() 
         {
             Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite2.png"));
-            Sprite.Color = Color.Red;
+            Sprite.Color = Color.White;
             Random r = new Random();
             Position = Position;
             Forward = new Vector2f(r.Next(0, 1024), r.Next(0, 768)).Normal();
             Speed = 400;
             Center();
         }
+        float timer = 0;
         public override void Update(float dt)
         {
             base.Update(dt);
+            timer += dt;
             float wSprite = GetLocalBounds().Width / 2;
             Rotation = 30f * dt;
 
@@ -35,8 +37,11 @@ namespace NavecitaC.Source.Game
             {
                 Forward = new Vector2f(Forward.X, Forward.Y * -1);
             }
-
-            CheckCollision();
+            if(timer > 2)
+            {
+                CheckCollision();
+            }
+            
         }
         private void CheckCollision()
         {
