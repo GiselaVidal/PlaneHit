@@ -37,8 +37,21 @@ namespace App.Source.Game
                 Forward = new Vector2f(Forward.X, Forward.Y * -1);
                 Scale *= 1.1f;
             }
-            
 
+            CheckCollision();
+        }
+
+        private void CheckCollision()
+        {
+            List<Spaceship> spaceships = Engine.Get.Scene.GetAll<Spaceship>();
+
+            foreach (Spaceship spaceship in spaceships)
+            {
+                if (spaceship.GetGlobalBounds().Intersects(GetGlobalBounds()))
+                {
+                    spaceship.Destroy();
+                }
+            }
         }
     }
 }
