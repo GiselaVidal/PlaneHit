@@ -37,7 +37,8 @@ namespace TcGame
             background = Engine.Get.Scene.Create<Background>();
             Engine.Get.Scene.Create<Spaceship>();
             CreateTIEpawner();
-            CreateMeteors();
+            createBigMeteors();
+            createSmallMeteors();
         }
 
         private void CreateTIEpawner()
@@ -52,10 +53,22 @@ namespace TcGame
             spawner.Reset();
         }
 
-        private void CreateMeteors()
+        private void createBigMeteors()
         {
             ActorSpawner<BigMeteor> spawner;
             spawner = Engine.Get.Scene.Create<ActorSpawner<BigMeteor>>();
+            var win = Engine.Get.Window.Size;
+            spawner.MinPosition = new Vector2f(100, 50);
+            spawner.MaxPosition = new Vector2f(win.X - 100, win.Y - 300);
+            spawner.MinTime = 1.0f;
+            spawner.MaxTime = 10.0f;
+            spawner.Reset();
+        }
+
+        private void createSmallMeteors()
+        {
+            ActorSpawner<SmallMeteor> spawner;
+            spawner = Engine.Get.Scene.Create<ActorSpawner<SmallMeteor>>();
             var win = Engine.Get.Window.Size;
             spawner.MinPosition = new Vector2f(100, 50);
             spawner.MaxPosition = new Vector2f(win.X - 100, win.Y - 300);
