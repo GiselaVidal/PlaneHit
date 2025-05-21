@@ -1,11 +1,11 @@
 ﻿namespace TcGame
 {
-  public interface Game
-  {
-    void Init();
+    public interface Game
+    {
+        void Init();
 
-    void DeInit();
+        void DeInit();
 
-    void Update(float dt);
-  }
+        void Update(float dt);
+    }
 }
