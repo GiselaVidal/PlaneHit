@@ -13,7 +13,7 @@ namespace NavecitaC.Source.Game
     {
         private float shootTimer = 0f;
         private float shootInterval = 2f;
-
+        private float timer = 0;
 
         public EvilSpaceship() { 
         
@@ -29,13 +29,17 @@ namespace NavecitaC.Source.Game
         public override void Update(float dt)
         {
             base.Update(dt);
+            timer += dt;
             shootTimer += dt;
             if (shootTimer >= shootInterval)
             {
                 shootTimer = 0f;
                 Shoot();
             }
-            CheckCollision();
+            if (timer > 2)
+            {
+                CheckCollision();
+            }
         }
 
         private void Shoot()

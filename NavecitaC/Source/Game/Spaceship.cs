@@ -57,6 +57,7 @@ namespace TcGame
         {
             List<BigMeteor> meteors = Engine.Get.Scene.GetAll<BigMeteor>();
             List<Laser> lasers = Engine.Get.Scene.GetAll<Laser>();
+            List<EvilSpaceship> evilships = Engine.Get.Scene.GetAll<EvilSpaceship>();
             foreach (BigMeteor meteor in meteors)
             {
                 foreach (Laser laser in lasers)
@@ -69,8 +70,20 @@ namespace TcGame
                         
                     }
                 }
+                
             }
-
+            foreach (EvilSpaceship shipevil in evilships)
+            {
+                foreach (Laser laser in lasers)
+                {
+                    if (laser.GetGlobalBounds().Intersects(shipevil.GetGlobalBounds()))
+                    {
+                        shipevil.Destroy();
+                        laser.Destroy();
+                        Hud h = Engine.Get.Scene.GetFirst<Hud>();
+                    }
+                }
+            }
         }
     }
 }

@@ -11,7 +11,12 @@ namespace TcGame
     {
         public BigMeteor()
         {
+<<<<<<< Updated upstream
             Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite1.png"));
+=======
+            
+            Sprite = new Sprite(new Texture("Data/Textures/meteorites/meteorite2.png"));
+>>>>>>> Stashed changes
             Sprite.Color = Color.Red;
             Random r = new Random();
      
@@ -34,10 +39,11 @@ namespace TcGame
             Speed = 300;
             Center();
         }
-
+        float timer = 0;
         public override void Update(float dt)
         {
             base.Update(dt);
+            timer += dt;
             float wSprite = GetLocalBounds().Width / 2;
             Rotation = 30f * dt;
 
@@ -51,8 +57,11 @@ namespace TcGame
                 Forward = new Vector2f(Forward.X, Forward.Y * -1);
                 Scale *= 1.1f;
             }
-
-            CheckCollision();
+            if (timer < 2)
+            {
+                CheckCollision();
+            }
+            
         }
         private float Distance(Vector2f a,Vector2f b)
         {
