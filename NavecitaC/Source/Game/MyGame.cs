@@ -36,8 +36,8 @@ namespace TcGame
         {
             background = Engine.Get.Scene.Create<Background>();
             Engine.Get.Scene.Create<Spaceship>();
-            Engine.Get.Scene.Create<EvilSpaceship>();
             CreateTIEpawner();
+            Engine.Get.Scene.Create<BigMeteor>();
         }
 
         private void CreateTIEpawner()

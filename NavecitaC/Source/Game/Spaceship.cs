@@ -1,4 +1,5 @@
-﻿using App.Source.Game;
+﻿
+using NavecitaC.Source.Game;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -10,22 +11,16 @@ namespace TcGame
         private float Speed = 300f;
         private float Timer;
         private Vector2f tailOffset;
-
-
         public Spaceship()
         {
-
             Layer = ELayer.Front;
             Sprite = new Sprite(new Texture("Data/Textures/Player/falcon.png"));
             Position = new SFML.System.Vector2f(Engine.Get.Window.Size.X / 2, Engine.Get.Window.Size.Y / 2 + 100); 
-            Center();
-            
+            Center(); 
         }
-
         public override void Update(float dt)
         {
             base.Update(dt);
-
             Follow();
             Position += Forward * Speed * dt;
 
@@ -36,9 +31,7 @@ namespace TcGame
                 {
                     Timer = 0f;
                     Shoot();
-
                 }
-
             }
         }
 
@@ -59,16 +52,12 @@ namespace TcGame
             Rotation = (float)Math.Atan2(Forward.Y, Forward.X) *
             MathUtil.RAD2DEG + 90;
             CheckCollision();
-
-
         }
-
         private void CheckCollision()
         {
-            List<Meteor> meteors = Engine.Get.Scene.GetAll<Meteor>();
+            List<BigMeteor> meteors = Engine.Get.Scene.GetAll<BigMeteor>();
             List<Laser> lasers = Engine.Get.Scene.GetAll<Laser>();
-
-            foreach (Meteor meteor in meteors)
+            foreach (BigMeteor meteor in meteors)
             {
                 foreach (Laser laser in lasers)
                 {
@@ -76,6 +65,8 @@ namespace TcGame
                     {
                         meteor.Destroy();
                         laser.Destroy();
+                        Hud h = Engine.Get.Scene.GetFirst<Hud>();
+                        
                     }
                 }
             }

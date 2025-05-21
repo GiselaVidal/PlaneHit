@@ -35,6 +35,7 @@ namespace NavecitaC.Source.Game
                 shootTimer = 0f;
                 Shoot();
             }
+            CheckCollision();
         }
 
         private void Shoot()
@@ -45,6 +46,19 @@ namespace NavecitaC.Source.Game
             laser.Forward = new Vector2f(0, 1);
             laser.Sprite.Color = new Color(255, 100, 100);
             laser.Speed = 300f;
+        }
+        private void CheckCollision()
+        {
+            List<Spaceship> spaceships = Engine.Get.Scene.GetAll<Spaceship>();
+
+            foreach (Spaceship spaceship in spaceships)
+            {
+                if (spaceship.GetGlobalBounds().Intersects(GetGlobalBounds()))
+                {
+                    spaceship.Destroy();
+
+                }
+            }
         }
     }
 }
