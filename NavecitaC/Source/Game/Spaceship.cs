@@ -1,5 +1,6 @@
 ﻿
 using NavecitaC.Source.Game;
+using SFML.Audio;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -34,13 +35,13 @@ namespace TcGame
                 }
             }
         }
-
+        
         public void Shoot()
         {
             float laserOffset = 40f;
             
             Laser b = Engine.Get.Scene.Create<Laser>();
-           
+            SoundLaser s = Engine.Get.Scene.Create<SoundLaser>();
             b.Position = Position+Forward * laserOffset;
             b.Forward = Forward.Normal();
             
@@ -57,7 +58,9 @@ namespace TcGame
         {
             List<BigMeteor> meteors = Engine.Get.Scene.GetAll<BigMeteor>();
             List<Laser> lasers = Engine.Get.Scene.GetAll<Laser>();
+            List<SmallMeteor> smallmeteor = Engine.Get.Scene.GetAll<SmallMeteor>();
             List<EvilSpaceship> evilships = Engine.Get.Scene.GetAll<EvilSpaceship>();
+
             foreach (BigMeteor meteor in meteors)
             {
                 foreach (Laser laser in lasers)
@@ -81,6 +84,19 @@ namespace TcGame
                     if (laser.GetGlobalBounds().Intersects(shipevil.GetGlobalBounds()))
                     {
                         shipevil.Destroy();
+                        laser.Destroy();
+                        Hud h = Engine.Get.Scene.GetFirst<Hud>();
+                        h.ShotDown();
+                    }
+                }
+            }
+            foreach (SmallMeteor small in smallmeteor)
+            {
+                foreach (Laser laser in lasers)
+                {
+                    if (laser.GetGlobalBounds().Intersects(small.GetGlobalBounds()))
+                    {
+                        small.Destroy();
                         laser.Destroy();
                         Hud h = Engine.Get.Scene.GetFirst<Hud>();
                         h.ShotDown();

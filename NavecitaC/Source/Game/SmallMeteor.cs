@@ -18,7 +18,7 @@ namespace NavecitaC.Source.Game
             Random r = new Random();
             Position = Position;
             Forward = new Vector2f(r.Next(0, 1024), r.Next(0, 768)).Normal();
-            Speed = 400;
+            Speed = 350;
             Center();
         }
         float timer = 0;

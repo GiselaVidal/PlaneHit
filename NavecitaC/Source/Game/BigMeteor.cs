@@ -31,7 +31,7 @@ namespace TcGame
 
             Position = spawnPos;
             Forward = new Vector2f(r.Next(0, 1024), r.Next(0, 768)).Normal();
-            Speed = 300;
+            Speed = 250;
             Center();
         }
         float timer = 0;

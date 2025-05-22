@@ -27,6 +27,12 @@
     <None Update="Data\Fonts\georgia.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\Sounds\explosion.ogg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Sounds\laser.ogg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\Textures\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
